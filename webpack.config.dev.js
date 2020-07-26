@@ -9,15 +9,15 @@ export default {
   ],
   target: 'web',
   output: {
-    patch: ppath.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'src'),
     publicPath: '/',
     filename: 'bundle.js'
   },
   plugins: [],
   module: {
-    loaders: {
+    loaders: [
       {test: /\.js$/, exlude: /node_modules/, loaders: ['babel']},
       {test: /\.css$/, loaders: ['style','css']}
-    }
+    ]
   }
 }
