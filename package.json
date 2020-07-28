@@ -6,8 +6,9 @@
     "prestart": "babel-node buildScripts/startMessage.js",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
-    "start": "babel-node buildScripts/srcServer.js",
-    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\""
+    "start": "babel-node buildScripts/srcServer.js lint:watch test:watch",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test --  --watch"
   },
   "author": "Cory House",
   "license": "MIT",
