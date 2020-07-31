@@ -34,7 +34,21 @@ export default {
     // Create HTML file that includes reference to build JS.
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      inject: true
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      },
+      inject: true,
+      //Properties you define here are available  in index.html
+      //using htmlWebpackPlugin.options.varName
+      trackJSToken:'41b1796f2aae4b75a5d1fac127d8002e'
     }),
 
     // Eliminate duplicate packages when generating bandle
